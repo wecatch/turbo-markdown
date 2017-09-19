@@ -37,6 +37,7 @@ setup(
         ]
     },
     include_package_data=True,
+    package_data={'turbo_markdown': ['static/css/*', 'static/js/*']},
     install_requires=requirements,
     license="MIT license",
     zip_safe=False,

@@ -4,27 +4,64 @@ template_html = """
 <head>
   <meta charset="UTF-8">
   <title>Document</title>
-  <link rel="stylesheet" type="text/css" href="/static/css/joydoc.css">
-  <link rel="stylesheet" type="text/css" href="/static/css/joydoc-responsive.css">
-  <script type="text/javascript" src="/static/js/jquery-2.0.3.js" ></script>
-  <script type="text/javascript" src="/static/js/bootstrap.js" ></script>
-  <link rel="stylesheet" type="text/css" href="/static/css/pygements/colorful.css">
+  # <link rel="stylesheet" type="text/css" href="/static/css/semantic.min.css">
+  <script type="text/javascript" src="/static/js/jquery-3.2.1.min.js" ></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav.nav-list {
+        .has-sub {
+            ul {
+                display: none;
+            }
+        }
+    }
+
+    .main-wrapper {
+        margin-left: 320px;
+    }
+
+    .doc-header {
+
+    }
+
+    .doc-tree {
+        position: fixed;
+        width: 300px;
+        top:0;
+        left: 0;
+        border-right: 1px solid #ccc;
+        background-color: #f5f5f5;
+        overflow-y: auto;
+        height: 100%;
+        min-height: 100%;
+
+        h3 {
+            margin: 0px;
+            text-align: center;
+        }
+    }
+
+    .doc-content {
+
+    }
+  </style>
 </head>
 <body>
   <div class="doc-tree js-doc-tree" >
     <h3>tree </h3>
     {% raw html_tree %}
   </div>
-  <div class="container-fluid fluid-height main-wrapper" >
-    <div class="row-fluid" >
-      <div class="span12" >
+  <div class="ui grid main-wrapper" >
+    <div class="row" >
         <div class="doc-content js-doc-content codehilite" >
           {% raw html %}
         </div>
-      </div>
     </div>
   </div>
-    
 
   <script type="text/javascript">
     var gDocCache = {};

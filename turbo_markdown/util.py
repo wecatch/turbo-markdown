@@ -17,7 +17,7 @@ def generate_html_tree(docs_path, doc_dict):
 
 
 def generate_html(parent_path, doc_dict):
-    html = '<ul class="nav nav-list" >'
+    html = '<ul class="nav-list" >'
 
     parent = doc_dict[parent_path]
     parent_content = parent['content']
@@ -47,7 +47,7 @@ def scan_file(parent_path, doc_dict, parent_relative_path):
     }
     for current in all_docs:
         current_path = os.path.join(parent_path, current)
-        if os.path.isdir(current_path):
+        if os.path.isdir(current_path) and not os.path.basename(current_path).startswith('.'):
             scan_file(current_path, doc_dict, os.path.join(parent_relative_path, current))
         else:
             doc_dict[current_path] = {
