@@ -6,49 +6,91 @@ template_html = """
   <title>Document</title>
   # <link rel="stylesheet" type="text/css" href="/static/css/semantic.min.css">
   <script type="text/javascript" src="/static/js/jquery-3.2.1.min.js" ></script>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-    }
+      <style type="text/css" media="screen">
+        html, body, div, span,
+        h1, h2, h3, h4, h5, h6, p,
+        a , em, img, strong, i,
+        ol, ul, li, form, label {
+          margin: 0;
+          padding: 0;
+          border: 0;
+          font-size: 14px;
+          vertical-align: baseline;
+          line-height: 16px;
+        }
 
-    .nav.nav-list {
-        .has-sub {
-            ul {
-                display: none;
+        ol, ul {
+          list-style: none;
+        }
+
+        body {
+          background-color: #fff;
+          min-height: 100%;
+        }
+
+        a {
+          outline: none;
+          text-decoration: none;
+        }
+
+        img {
+          width: auto;
+          height: auto;
+        }
+
+        .nav-list {
+            padding-left: 15px;
+            padding-right: 15px;
+            margin-bottom: 0px;
+        }
+
+        .nav-list li {
+            line-height: 20px;
+        }
+
+        .nav-list > li > a {
+            margin-left: -15px;
+            margin-right: -15px;
+            text-shadow: rgba(255, 255, 255, 0.5) 0px 1px 0px;
+            padding: 3px 15px;
+            display: block;
+            color: #08c;
+            line-height: 20px;
+        }
+
+        .nav-list > li > a:hover {
+            background: #eee;
+        }
+
+        .has-sub ul {
+            /*display: none;*/
+        }
+
+        .main-wrapper {
+            margin-left: 320px;
+        }
+
+        .doc-tree {
+            position: fixed;
+            width: 300px;
+            top:0;
+            left: 0;
+            border-right: 1px solid #ccc;
+            background-color: #f5f5f5;
+            overflow-y: auto;
+            height: 100%;
+            min-height: 100%;
+
+            h3 {
+                margin: 0px;
+                text-align: center;
             }
         }
-    }
 
-    .main-wrapper {
-        margin-left: 320px;
-    }
+        .doc-content {
 
-    .doc-header {
-
-    }
-
-    .doc-tree {
-        position: fixed;
-        width: 300px;
-        top:0;
-        left: 0;
-        border-right: 1px solid #ccc;
-        background-color: #f5f5f5;
-        overflow-y: auto;
-        height: 100%;
-        min-height: 100%;
-
-        h3 {
-            margin: 0px;
-            text-align: center;
         }
-    }
-
-    .doc-content {
-
-    }
-  </style>
+    </style>
 </head>
 <body>
   <div class="doc-tree js-doc-tree" >
