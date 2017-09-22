@@ -13,31 +13,24 @@ from turbo import app, register
 from turbo.conf import app_config
 import tornado.template
 
-from util import get_tree, generate_html_tree
-from template import template_html
+from turbo_markdown.util import get_tree, generate_html_tree
+from turbo_markdown.template import template_html
 
 app_config.app_name = 'turbo-markdown'
 app_config.web_application_setting = {
     'xsrf_cookies': False,
     'cookie_secret': 'abcdefg',
-    'static_path': os.path.join('.', "static"),
+    'static_path': os.path.join(os.path.dirname(__file__), "static"),
 }
 
 DOC_DICT = None
+DOCS_PATH = ''
 HTML_TREE = None
 
 
-class DocsInfo(object):
-
-    docs_path = '/Users/zhaoyongqiang/zhyq0826/note'
-
-    def __init__(self, docs_path=None):
-        if docs_path:
-            self.docs_path = '/home/dev/worlspace/tornado/tornado'
-
 
 def parse_markdown(path):
-    current_file = os.path.join(DocsInfo.docs_path, path)
+    current_file = os.path.join(DOCS_PATH, path)
     if path.endswith('.md') or path.endswith('.markdown'):
         with codecs.open(current_file, mode='r', encoding='utf-8') as f:
             html = mistune.markdown(f.read())
@@ -66,17 +59,22 @@ class HomeHandler(app.BaseHandler):
             return self.write(html)
 
         if not DOC_DICT:
-            DOC_DICT = get_tree(DocsInfo.docs_path)
+            DOC_DICT = get_tree(DOCS_PATH)
 
         if not HTML_TREE:
-            HTML_TREE = generate_html_tree(DocsInfo.docs_path, DOC_DICT)
+            HTML_TREE = generate_html_tree(DOCS_PATH, DOC_DICT)
         t = tornado.template.Template(template_html)
         self.write(t.generate(html_tree=HTML_TREE, html=html))
 
 
-def run_server():
+def run_server(docs_path=''):
+    if not docs_path:
+        print('No Path Found')
+        return
+    global DOCS_PATH
+    DOCS_PATH = docs_path
     register.register_url('/', HomeHandler)
-    register.register_url('', HomeHandler)
+    register.register_url('/(.*)', HomeHandler)
     app.start(8888)
 
 
