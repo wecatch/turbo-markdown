@@ -84,5 +84,4 @@ css_v = hashlib.md5(
         os.path.dirname(__file__),
         'static/css/github.css'), 'r').read()).hexdigest()[0:6]
 
-print(css_v)
 template_html = TEMPLATE_HTML.replace('css_version', css_v)

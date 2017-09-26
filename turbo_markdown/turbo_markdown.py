@@ -67,7 +67,7 @@ class HomeHandler(app.BaseHandler):
         self.write(t.generate(html_tree=HTML_TREE, html=html))
 
 
-def run_server(docs_path=''):
+def run_server(docs_path='', port=None):
     if not docs_path:
         print('No Path Found')
         return
@@ -75,7 +75,7 @@ def run_server(docs_path=''):
     DOCS_PATH = docs_path
     register.register_url('/', HomeHandler)
     register.register_url('/(.*)', HomeHandler)
-    app.start(8888)
+    app.start(port)
 
 
 if __name__ == '__main__':
