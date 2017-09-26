@@ -12,7 +12,6 @@ def main(args=None):
                "turbo_markdown.cli.main")
     click.echo("See click documentation at http://click.pocoo.org/")
     abspath = os.path.abspath('.')
-    print abspath
     run_server(abspath)
 
 

@@ -1,15 +1,18 @@
-template_html = """
+import hashlib
+import os.path
+
+
+TEMPLATE_HTML = """
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Document</title>
-  <link rel="stylesheet" href="/static/css/github.css">
+  <link rel="stylesheet" href="/static/css/github.css?v=css_version">
   <script type="text/javascript" src="/static/js/jquery-3.2.1.min.js" ></script>
 </head>
 <body>
   <div class="doc-tree js-doc-tree" >
-    <h3>tree </h3>
     {% raw html_tree %}
   </div>
   <div class="ui grid main-wrapper" >
@@ -74,3 +77,12 @@ template_html = """
 </body>
 </html>
 """
+
+
+css_v = hashlib.md5(
+    open(os.path.join(
+        os.path.dirname(__file__),
+        'static/css/github.css'), 'r').read()).hexdigest()[0:6]
+
+print(css_v)
+template_html = TEMPLATE_HTML.replace('css_version', css_v)

@@ -169,6 +169,14 @@ code {
     /*display: none;*/
 }
 
+li.has-sub>a {
+    background-image: url(/static/img/folder.png);
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: 20px auto;
+    text-indent: 10px;
+}
+
 .main-wrapper {
     margin-left: 320px;
 }
