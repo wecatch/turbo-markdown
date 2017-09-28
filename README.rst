@@ -27,10 +27,8 @@ A cli tool to view local markdown files
 
 Get Started
 -----------
-
-```
-pip install turbo-markdown
-cd markdown_dir/
-turbo_markdown
-```
+::
+    pip install turbo-markdown
+    cd markdown_dir/
+    turbo_markdown
 
