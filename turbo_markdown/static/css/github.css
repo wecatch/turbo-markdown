@@ -10,10 +10,6 @@ ol, ul, li, form, label {
   line-height: 16px;
 }
 
-ol, ul {
-  list-style: none;
-}
-
 body {
   background-color: #fff;
   min-height: 100%;
@@ -196,6 +192,10 @@ li.has-sub>a {
         margin: 0px;
         text-align: center;
     }
+}
+
+.doc-tree ul {
+  list-style: none;
 }
 
 .doc-content {
