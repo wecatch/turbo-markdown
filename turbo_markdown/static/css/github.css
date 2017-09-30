@@ -10,10 +10,6 @@ ol, ul, li, form, label {
   line-height: 16px;
 }
 
-ol, ul {
-  list-style: none;
-}
-
 body {
   background-color: #fff;
   min-height: 100%;
@@ -215,6 +211,14 @@ code {
     text-indent: 30px;
 }
 
+
+.doc-tree ul {
+  list-style: none;
+}
+
+.doc-content {
+    margin-left:50px;
+}
 
 .main-wrapper {
     margin-left: 320px;

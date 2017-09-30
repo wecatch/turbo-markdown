@@ -11,16 +11,16 @@ with open('HISTORY.rst') as history_file:
 
 requirements = [
     'Click>=6.0',
-    # TODO: put package requirements here
+    'turbo>=0.4.5',
+    'mistune',
 ]
 
 test_requirements = [
-    # TODO: put package test requirements here
 ]
 
 setup(
     name='turbo_markdown',
-    version='0.1.0',
+    version='0.2.0',
     description="A cli tool to view local markdown files",
     long_description=readme + '\n\n' + history,
     author="wecatch",

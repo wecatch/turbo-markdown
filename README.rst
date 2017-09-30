@@ -25,16 +25,12 @@ A cli tool to view local markdown files
 * Documentation: https://turbo-markdown.readthedocs.io.
 
 
-Features
---------
+Get Started
+-------------
 
-* TODO
+Install and use turbo_markdown::
 
-Credits
----------
-
-This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
-
-.. _Cookiecutter: https://github.com/audreyr/cookiecutter
-.. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
+    pip install turbo-markdown
+    cd markdown_dir/
+    turbo_markdown
 

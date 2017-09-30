@@ -28,7 +28,6 @@ DOCS_PATH = ''
 HTML_TREE = None
 
 
-
 def parse_markdown(path):
     current_file = os.path.join(DOCS_PATH, path)
     if path.endswith('.md') or path.endswith('.markdown'):
@@ -37,12 +36,13 @@ def parse_markdown(path):
 
         return html
     else:
-        basename = os.path.basename(current_file)
-        with codecs.open(current_file, mode='r', encoding='utf-8') as f:
-            return highlight(
-                f.read(),
-                get_lexer_for_filename(basename),
-                HtmlFormatter(style=get_style_by_name('colorful')))
+        return ''
+        # basename = os.path.basename(current_file)
+        # with codecs.open(current_file, mode='r', encoding='utf-8') as f:
+        #     return highlight(
+        #         f.read(),
+        #         get_lexer_for_filename(basename),
+        #         HtmlFormatter(style=get_style_by_name('colorful')))
 
 
 class HomeHandler(app.BaseHandler):
