@@ -33,7 +33,7 @@ setup(
                  'turbo_markdown'},
     entry_points={
         'console_scripts': [
-            'turbo_markdown=turbo_markdown.cli:main'
+            'turbo-markdown=turbo_markdown.cli:main'
         ]
     },
     include_package_data=True,
@@ -42,7 +42,7 @@ setup(
     install_requires=requirements,
     license="MIT license",
     zip_safe=False,
-    keywords='turbo_markdown',
+    keywords='markdown,turbo',
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Intended Audience :: Developers',
