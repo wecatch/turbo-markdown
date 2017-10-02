@@ -64,7 +64,8 @@ class HomeHandler(app.BaseHandler):
         if not HTML_TREE:
             HTML_TREE = generate_html_tree(DOCS_PATH, DOC_DICT)
         t = tornado.template.Template(template_html)
-        self.write(t.generate(html_tree=HTML_TREE, html=html))
+        self.write(t.generate(
+            html_tree=HTML_TREE, html=html, title=os.path.basename(DOCS_PATH)))
 
 
 def run_server(docs_path='', port=None):

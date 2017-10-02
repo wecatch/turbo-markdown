@@ -7,7 +7,7 @@ TEMPLATE_HTML = """
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
+  <title>{{title}}</title>
   <link rel="stylesheet" href="/static/css/github.css?v=css_version">
   <script type="text/javascript" src="/static/js/jquery-3.2.1.min.js" ></script>
 </head>
