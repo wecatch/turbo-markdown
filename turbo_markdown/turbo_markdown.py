@@ -4,10 +4,10 @@ from __future__ import absolute_import, division, print_function, with_statement
 import os
 import codecs
 
-from pygments.lexers import get_lexer_for_filename
-from pygments.formatters.html import HtmlFormatter
-from pygments import highlight
-from pygments.styles import get_style_by_name
+# from pygments.lexers import get_lexer_for_filename
+# from pygments.formatters.html import HtmlFormatter
+# from pygments import highlight
+# from pygments.styles import get_style_by_name
 import mistune
 from turbo import app, register
 from turbo.conf import app_config

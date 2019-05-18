@@ -16,8 +16,10 @@ def generate_html_tree(docs_path, doc_dict):
     return html_tree
 
 
-def generate_html(parent_path, doc_dict):
+def generate_html(parent_path, doc_dict, hide=False):
     html = '<ul class="nav-list" >'
+    if hide:
+        html = '<ul class="nav-list sub-nav" style="display:none;" >'
 
     parent = doc_dict[parent_path]
     parent_content = parent['content']
@@ -29,9 +31,9 @@ def generate_html(parent_path, doc_dict):
             continue
         current_content = doc_dict[current_path]['content']
         if isinstance(current_content, list):
-            sub_html = generate_html(current_path, doc_dict)
+            sub_html = generate_html(current_path, doc_dict, True)
             if sub_html != '<ul class="nav-list" ></ul>':
-                html += '<li class="has-sub" ><a class="js-has-sub"  href="javascript:void(0)" >%s</a>%s</li>' % (current, sub_html)   # noqa
+                html += '<li class="has-sub" ><a class="js-has-sub close" href="javascript:void(0)" >%s</a>%s</li>' % (current, sub_html)   # noqa
         else:
             if current.endswith('.md') or current.endswith('.markdown'):
                 real_path = os.path.realpath(

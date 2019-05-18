@@ -28,6 +28,7 @@ TEMPLATE_HTML = """
 
     $("a.js-has-sub").on("click",function (e) {
       e.preventDefault();
+      $(this).toggleClass("close")
       $(this).parent().find("ul:first").slideToggle();
     });
 

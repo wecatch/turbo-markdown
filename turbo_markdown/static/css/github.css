@@ -191,20 +191,25 @@ code {
 
 
 .nav-list > li > a:hover {
-    background-color: #1296db;
-    color: #fff !important;
+    background-color: rgba(9,30,66,.08);
+    /*background-color: #1296db;*/
+    /*color: #fff !important;*/
 }
 
 
 .nav-list > li.has-sub>a:hover {
-    background-image: url(/static/img/white-folder.png) !important;
+    /*background-image: url(/static/img/white-folder.png) !important;*/
 }
 
 .nav-list li.has-sub>a {
-    background-image: url(/static/img/folder.png);
+    background-image: url(/static/img/folder-open-fill.png);;
     background-position: left center;
     background-repeat: no-repeat;
     background-size: 20px auto;
+}
+
+.nav-list li.has-sub>a.close {
+    background-image: url(/static/img/folder-fill.png) !important;;
 }
 
 .nav-list a {
